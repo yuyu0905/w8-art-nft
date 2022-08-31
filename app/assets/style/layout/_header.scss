@@ -1,0 +1,15 @@
+.logo {
+    height: 18px;
+    @include media-breakpoint-up(lg) {
+        height: auto;
+    }
+}
+
+.nav {
+    &-link {
+        color: $black;
+        &:hover {
+            color: $primary;
+        }
+    }
+}

@@ -7,7 +7,7 @@
 
 // scss-docs-start gray-color-variables
 $white:    #fff !default;
-$gray-100: #f8f9fa !default;
+$gray-100: #F0F0F0; //#f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
@@ -15,7 +15,7 @@ $gray-500: #adb5bd !default;
 $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+$gray-900: #808080; //#212529 !default;
 $black:    #000 !default;
 // scss-docs-end gray-color-variables
 
@@ -67,8 +67,8 @@ $colors: (
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary:       #00cc99; // $blue !default;
-$secondary:     $gray-600 !default;
+$primary:       #E6553B; // $blue !default;
+$secondary:     black; //$gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
@@ -86,7 +86,7 @@ $theme-colors: (
   "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
-  "dark":       $dark
+  "dark":       $dark,
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -222,7 +222,7 @@ $enable-reduced-motion:       true !default;
 $enable-smooth-scroll:        true !default;
 $enable-grid-classes:         true !default;
 $enable-button-pointers:      true !default;
-$enable-rfs:                  true !default;
+$enable-rfs:                  false !default;
 $enable-validation-icons:     true !default;
 $enable-negative-margins:     false !default;
 $enable-deprecation-messages: true !default;
@@ -253,8 +253,18 @@ $spacers: (
   1: $spacer * .25,
   2: $spacer * .5,
   3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  4: $spacer * 1.5, // 24px
+  5: $spacer * 2, // 32px
+  6: $spacer * 2.5, // 40px
+  7: $spacer * 3, // 48px
+  8: $spacer * 3.125, // 50px
+  9: $spacer * 3.5, // 56px
+  10: $spacer * 4, // 64px
+  11: $spacer * 4.5, // 72px
+  12: $spacer * 5, // 80px
+  13: $spacer * 5.5, // 88px
+  14: $spacer * 6, // 96px
+  15: $spacer * 6.5, // 104px
 ) !default;
 
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
@@ -441,12 +451,13 @@ $line-height-base:            1.5 !default;
 $line-height-sm:              1.25 !default;
 $line-height-lg:              2 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default;
+$h1-font-size:                $font-size-base * 3 !default; // 48px //$font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2.5 !default; // 40px //$font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 2 !default; // 32px //$font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default; // 24px //$font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default; // 20px
+$h6-font-size:                $font-size-base * 1.125 !default; // 18px
+$h7-font-size:                $font-size-base !default; // 16px
 // scss-docs-end font-variables
 
 // scss-docs-start font-sizes
@@ -456,7 +467,8 @@ $font-sizes: (
   3: $h3-font-size,
   4: $h4-font-size,
   5: $h5-font-size,
-  6: $h6-font-size
+  6: $h6-font-size,
+  7: $h7-font-size,
 ) !default;
 // scss-docs-end font-sizes
 

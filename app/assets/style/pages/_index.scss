@@ -1,0 +1,234 @@
+// 系列推薦
+.recommend {
+    &-img {
+        height: 238px;
+    }
+
+    &-img-lg {
+        @include media-breakpoint-up(xl) {
+            height: 500px;
+        }
+    }
+
+    &-img-md {
+        @include media-breakpoint-up(xl) {
+            height: 340px;
+        }
+    }
+}
+
+// 市價排行榜
+.ranking {
+    &-img {
+        width: 87px;
+        height: 95px;
+    }
+
+    &-img-md {
+        @include media-breakpoint-up(md) {
+            width: 414px;
+            height: 374px;
+        }
+    }
+
+    &-number {
+        @include media-breakpoint-up(md) {
+            position: absolute;
+            width: 64px;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    }
+}
+
+// 熱門藝術家
+.artist {
+    &-img {
+        height: 232px;
+        @include media-breakpoint-up(md) {
+            height: 439px;
+        }
+    }
+
+    &-name {
+        top: 24px;
+        left: 24px;
+    }
+
+    &-more {
+        right: 8px;
+        bottom: 8px;
+    }
+
+    &-info {
+        @include media-breakpoint-up(xl) {
+            width: 304px;
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+        }
+    }
+}
+
+// image 黑 + 右下 more btn(hover)
+.img-hover-more {
+    position: relative;
+    .btn-more, .triangle {
+        display: none;
+        right: 0;
+        bottom: 0;
+    }
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $secondary;
+        opacity: 0.6;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .btn-more {
+        display: block;
+        z-index: 1;
+        color: $white;
+        background-color: $primary;
+      }
+      .triangle {
+        display: block;
+        z-index: 1;
+        border-right: 16px solid $secondary;
+      }
+    }
+}
+
+// image 黑 + 右下三角形
+.img-hover-triangle {
+    position: relative;
+    .triangle {
+        display: none;
+    }
+    &:hover {
+      &::after {
+        content: 'more';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $secondary;
+        opacity: 0.6;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .triangle {
+        display: block;
+        z-index: 1;
+      }
+    }
+}
+
+// image 黑 + 右下 more btn + 內框
+.img-hover-more-btn {
+    position: relative;
+    .btn-more, .triangle {
+        display: none;
+        right: 32px;
+        bottom: 32px;
+    }
+    .info {
+        display: none;
+        width: calc(100% - 64px);
+        top: 32px;
+        left: 32px;
+    }
+
+    &:hover {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: $secondary;
+            opacity: 0.6;
+            color: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: 16px;
+            border: 1px solid $white;
+        }
+        .info {
+            display: inline-block;
+            z-index: 1;
+        }
+        .btn-more {
+            display: block;
+            z-index: 1;
+        }
+        .triangle {
+            display: block;
+            z-index: 1;
+        }
+    }
+}
+
+// 輪播
+.swiper {
+    &-slide-active {
+        @include media-breakpoint-up(xl) {
+            height: 439px !important;
+            width: 636px !important;
+            .artist-name, .artist-more, .artist-info {
+                display: block;
+            }
+        }
+    }
+
+    &-slide-next, &-slide-prev {
+        @include media-breakpoint-up(xl) {
+            height: 262px !important;
+            width: 306px !important;
+            .artist-img {
+                height: 262px;
+                filter: grayscale(100%); // 濾鏡 灰階
+            }
+            .artist-name, .artist-more, .artist-info {
+                display: none;
+            }
+        }
+    }
+
+    &-pagination {
+      position: unset;
+  
+      &-bullet {
+        background-color: $secondary;
+        border-radius: 0%;
+        opacity: 1;
+
+        &-active {
+            background-color: $primary;
+            width: 16px;
+        }
+      }
+    }
+  }

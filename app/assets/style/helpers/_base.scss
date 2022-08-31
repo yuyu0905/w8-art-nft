@@ -1,10 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Paytone+One&family=Squada+One&display=swap');
 
 // 全站樣式
 body {
     font-family: "Squada One", "cursive", "Noto Sans TC", "sans-serif";
+    background-color: $light;
 }
 
 img {
     object-fit: cover; // 防止圖片變形
+}
+
+a {
+    text-decoration: none;
+    color: $black;
 }

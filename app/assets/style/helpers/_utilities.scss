@@ -1,0 +1,133 @@
+.ff-paytone-one {
+    font-family: "Paytone One", "sans-serif";
+}
+.bg-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.h-1 {
+    height: 1px;
+}
+
+.triangle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    /*  三角形  */
+    width: 0;
+    height: 0;
+    border-right: 16px solid $primary;
+    border-top: 16px solid transparent;
+}
+
+.btn-more-hover {
+    &:hover {
+        color: $white;
+        background-color: $primary !important;
+        .triangle {
+            border-right: 16px solid $black;
+        }
+    }
+}
+
+.border-md-end {
+    @include media-breakpoint-up(md) {
+        border-right: 1px solid $black !important;
+    }
+}
+
+.border-md-end-0 {
+    @include media-breakpoint-up(md) {
+        border-right: 0px solid $black !important;
+    }
+}
+
+.border-md-start-0 {
+    @include media-breakpoint-up(md) {
+        border-left: 0px solid $black !important;
+    }
+}
+
+.border-md-bottom {
+    @include media-breakpoint-up(md) {
+        border-bottom: 1px solid $black !important;
+    }
+}
+
+.border-lg-bottom {
+    @include media-breakpoint-up(lg) {
+        border-bottom: 1px solid $black !important;
+    }
+}
+
+.border-xl {
+    @include media-breakpoint-up(xl) {
+        border: 1px solid $black !important;
+    }
+}
+
+.border-lg-start {
+    @include media-breakpoint-up(lg) {
+        border-left: 1px solid $black !important;
+    }
+}
+
+.border-xl-end-0 {
+    @include media-breakpoint-up(xl) {
+        border-right: none !important;
+    }
+}
+
+.bg-lg-light {
+    @include media-breakpoint-up(lg) {
+        background-color: $light !important;
+    }
+}
+
+.fs-xl-1 {
+    @include media-breakpoint-up(xl) {
+        font-size: $h1-font-size !important; // 48px
+    }
+}
+
+.fs-md-3 {
+    @include media-breakpoint-up(md) {
+        font-size: $h3-font-size !important; // 32px
+    }
+}
+
+.fs-xl-3 {
+    @include media-breakpoint-up(xl) {
+        font-size: $h3-font-size !important; // 32px
+    }
+}
+
+.fs-lg-7 {
+    @include media-breakpoint-up(lg) {
+        font-size: $h7-font-size !important; // 16px
+    }
+}
+
+.fw-lg-bold {
+    @include media-breakpoint-up(lg) {
+        font-weight: bold;
+    }
+}
+
+.display-xl-1 {
+    @include media-breakpoint-up(xl) {
+        font-size: map-get($display-font-sizes, 1) !important; // 80px
+    }
+}
+
+.vertical-lr {
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+}
+
+.bg-opacity-white {
+    --bs-bg-opacity: 0.8;
+    background-color: rgba(($white), var(--bs-bg-opacity)) !important;
+}
