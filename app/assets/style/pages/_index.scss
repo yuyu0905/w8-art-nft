@@ -2,6 +2,9 @@
 .recommend {
     &-img {
         height: 238px;
+        @include media-breakpoint-up(md) {
+            height: 372px;
+        }
     }
 
     &-img-lg {
@@ -199,6 +202,9 @@
             width: 636px !important;
             .artist-name, .artist-more, .artist-info {
                 display: block;
+            }
+            .artist-img {
+                transition: 0.6s;
             }
         }
     }
