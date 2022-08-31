@@ -1,4 +1,21 @@
 $(function() {
+  $(".header-menu").click(function(e) {
+    e.preventDefault();
+    $(".header-menu").toggleClass("d-none");
+    $(".header-close").toggleClass("d-none");
+  });
+
+  $(".header-close").click(function(e) {
+    e.preventDefault();
+    $(".header-menu").toggleClass("d-none");
+    $(".header-close").toggleClass("d-none");
+  });
+
+  $(".header-search").click(function(e) {
+    e.preventDefault();
+    $(".header-search-bar").toggleClass("d-none");
+  });
+
   const swiper = new Swiper(".artist-swiper", {
     slidesPerView: 1,
     spaceBetween: 0,

@@ -13,3 +13,25 @@
         }
     }
 }
+
+.header {
+    &-line {
+        top: 52px;
+        @include media-breakpoint-up(lg) {
+            top: 104px;
+        }
+    }
+
+    .fa-solid {
+        width: 18px;
+    }
+
+    &-search-bar {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        .form-control {
+            font-size: $small-font-size;
+        }
+    }
+}

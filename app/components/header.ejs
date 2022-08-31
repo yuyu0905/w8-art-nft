@@ -1,32 +1,37 @@
-<header class="sticky-top">
+<header class="sticky-top header">
   <nav class="navbar navbar-expand-lg py-0 bg-light">
-    <div class="container-lg">
-      <h1 class="mb-0 py-3 py-lg-5">
-        <a class="navbar-brand d-block lh-1 p-0" href="index.html">
+    <div class="container-fluid container-lg px-0 px-lg-2">
+      <h1 class="mb-0 py-3 py-lg-5 px-2 px-lg-0">
+        <a class="navbar-brand d-block lh-1 p-0 flex-grow-1" href="index.html">
           <img src="assets/images/logo.svg" class="img-fluid logo" alt="logo">
         </a>
       </h1>
       <div>
-        <a class="text-secondary py-3 me-4 d-lg-none" role="button">
+        <a class="text-secondary py-3 me-4 d-lg-none header-search" role="button">
           <i class="fa-solid fa-magnifying-glass align-middle fs-6"></i>
         </a>
-        <a class="navbar-toggler border-0 text-secondary py-3" role="button" data-bs-toggle="collapse" data-bs-target="#menu "aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-toggler border-0 text-secondary py-3 header-menu" role="button" data-bs-toggle="collapse" data-bs-target="#menu "aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars align-middle fs-6"></i>
+        </a>
+        <a class="navbar-toggler border-0 text-secondary py-3 header-close d-none" role="button" data-bs-toggle="collapse" data-bs-target="#menu "aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa-solid fa-xmark align-middle fs-6"></i>
         </a>
       </div>
 
       <div class="collapse navbar-collapse flex-grow-0 bg-white bg-lg-light" id="menu">
         <ul class="navbar-nav me-auto mb-4 mb-lg-0 text-center">
           <li class="nav-item d-none d-lg-flex">
-            <p class="mb-0 py-4 py-lg-6 px-lg-7 border-lg-start fs-6 fs-lg-7">搜尋作品名稱、藝術家名稱</p>
-            <a class="nav-link py-4 py-lg-6 px-lg-7 border-0" href="#">
-              <i class="fa-solid fa-magnifying-glass align-middle fs-6"></i>
-            </a>
+            <form class="d-flex">
+              <input class="form-control bg-light border-0" type="search" placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+              <a class="nav-link py-4 py-lg-6 px-lg-7 border-0" href="#">
+                <i class="fa-solid fa-magnifying-glass align-middle fs-6"></i>
+              </a>
+            </form>
           </li>
-          <li class="nav-item">
+          <li class="nav-item px-2 px-lg-0">
             <a class="nav-link py-4 py-lg-6 px-lg-6 px-xxl-7 border-bottom border-lg-start fs-6 fw-bold fs-lg-7 <%- current == '' ? 'active' : '' %>" href="#">探索</a>
           </li>
-          <li class="nav-item mb-1 mb-lg-0">
+          <li class="nav-item px-2 px-lg-0 mb-1 mb-lg-0">
             <a class="nav-link py-4 py-lg-6 px-lg-6 px-xxl-7 border-lg-start fs-6 fw-bold fs-lg-7 <%- current == '' ? 'active' : '' %>" href="#">市值</a>
           </li>
           <li class="nav-item d-none d-lg-block">
@@ -34,7 +39,7 @@
               <i class="fa-solid fa-wallet align-middle"></i>
             </a>
           </li>
-          <li class="nav-item d-lg-none mb-1 mb-lg-0">
+          <li class="nav-item px-2 px-lg-0 d-lg-none mb-1 mb-lg-0">
             <a class="nav-link py-3 py-lg-4 border fs-6 fw-bold bg-primary text-white" role="button" data-bs-toggle="modal" data-bs-target="#loginModal">
               連結錢包
             </a>
@@ -42,7 +47,22 @@
         </ul>
       </div>
     </div>
-    <div class="bg-secondary w-100 position-absolute bottom-0 start-0 h-1"></div>
+    <div class="bg-secondary w-100 position-absolute h-1 header-line"></div>
   </nav>
+    
+  <!-- 搜尋 -->
+  <div class="header-search-bar w-100 d-none bg-light">
+    <div class="container-fluid">
+      <form class="d-flex align-items-center">
+        <a class="py-3 border-0 lh-1 header-search" href="#">
+          <i class="fa-solid fa-angle-left align-middle fs-6"></i>
+        </a>
+        <input class="form-control bg-light border-0" type="search" placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+        <a class="py-3 border-0 lh-1 header-search" href="#">
+          <i class="fa-solid fa-magnifying-glass align-middle fs-6"></i>
+        </a>
+      </form>
+    </div>
+  </div>
 </header>
 
