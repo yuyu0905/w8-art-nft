@@ -1,0 +1,272 @@
+---
+title: 藝術品介紹 - NFT藝術家交易平台
+layout: ./app/layout.ejs
+engine: ejs
+current: art-introduction
+---
+
+<main>
+    <section class="pt-4 pb-6 pt-lg-6">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-12 col-lg-6">
+                    <img src="assets/images/art21.jpg" class="img-fluid art-img w-100" alt="art21">
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body mb-2 mb-lg-3 px-lg-6 flex-lg-grow-0">
+                            <div class="d-lg-flex flex-lg-row-reverse justify-content-lg-between mb-lg-3">
+                                <div class="d-flex align-items-center mb-2 mb-lg-0">
+                                    <img src="assets/images/artist01.jpg" class="img-fluid art-people-img rounded-circle me-2" alt="artist01">
+                                    <p class="card-text text-secondary mb-0">Michael</p>
+                                </div>
+                                <h2 class="text-secondary fs-3 fs-lg-1 fw-bold mb-3 mb-lg-0">兩情相悅</h2>
+                            </div>
+                            <p class="card-subtitle small mb-2">最高出價</p>
+                            <div class="d-flex justify-content-between align-items-end">
+                                <div class="d-flex align-items-center">
+                                    <img src="assets/images/user01.jpg" class="img-fluid art-people-img rounded-circle me-2" alt="user01">
+                                    <i class="fa-solid fa-arrow-right text-secondary me-2"></i>
+                                    <p class="text-secondary mb-0">0.044Eth</p>
+                                </div>
+                                <a class="card-link py-2 px-7 border fs-6 btn-orange" role="button">出價</a>
+                            </div>
+                        </div>
+                        <div class="card-body py-4 py-lg-5 px-lg-6 border-top ff-noto-sans">
+                            <p class="text-secondary mb-3">3/14情人節外面剛好有兩隻鳥，也在過情人節。</p>
+                            <p class="text-secondary mb-3">而且其中一隻竟然有梳油頭，不知道是不是有用定型液，他們感情真好，出門還會特別打扮，看著看著不禁思考，我怎麼會變這樣？</p>
+                            <p class="text-secondary mb-0">好羨慕啊，我也要有這樣兩情相悅的另一半。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 摺疊資訊 -->
+            <div class="row g-4 art-intro" data-masonry='{"percentPosition": true }'>
+                <div class="col-12 col-lg-6">
+                    <div class="accordion" id="characteristic">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-bold p-3 p-lg-4" type="button" data-bs-toggle="collapse" data-bs-target="#characteristic-collapse" aria-expanded="true" aria-controls="characteristic-collapse">
+                                屬性
+                            </button>
+                          </h2>
+                          <div id="characteristic-collapse" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#characteristic">
+                            <div class="accordion-body text-secondary px-3 py-4 px-lg-4">
+                                <table class="table table-borderless table-hover ff-noto-sans mb-0">
+                                    <tbody>
+                                      <tr class="border-bottom border-light">
+                                        <th class="text-secondary fw-normal ps-0">品種</th>
+                                        <td class="text-end pe-0">青藍金剛鸚鵡</td>
+                                      </tr>
+                                      <tr class="border-bottom border-light">
+                                        <th class="text-secondary fw-normal ps-0">鳥的數量</th>
+                                        <td class="text-end pe-0">2隻</td>
+                                      </tr>
+                                      <tr class="border-bottom border-light">
+                                        <th class="text-secondary fw-normal ps-0">是否有花草</th>
+                                        <td class="text-end pe-0">是</td>
+                                      </tr>
+                                      <tr>
+                                        <th class="text-secondary fw-normal ps-0">鳥的顏色</th>
+                                        <td class="text-end pe-0">藍色</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="accordion" id="price">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-bold p-3 p-lg-4" type="button" data-bs-toggle="collapse" data-bs-target="#price-collapse" aria-expanded="true" aria-controls="price-collapse">
+                                出價
+                            </button>
+                          </h2>
+                          <div id="price-collapse" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#price">
+                            <div class="accordion-body text-secondary px-3 py-4 px-lg-4">
+                                <table class="table table-borderless table-hover mb-0">
+                                    <thead class="text-center text-lg-start text-secondary small bg-light">
+                                        <tr>
+                                            <th class="fw-normal ps-lg-3">價格</th>
+                                            <th class="fw-normal">期限</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr class="border-bottom border-light">
+                                        <th class="text-secondary fw-normal ps-0 ps-lg-3 d-flex align-items-center">
+                                            <img src="assets/images/artist03.jpg" class="img-fluid art-people-img rounded-circle me-2" alt="artist03">
+                                            <i class="fa-solid fa-arrow-right text-secondary me-2"></i>
+                                            <p class="text-secondary mb-0">0.044Eth</p>
+                                        </th>
+                                        <td class="text-end text-lg-start ff-noto-sans pe-0">3個月後</td>
+                                      </tr>
+                                      <tr class="border-bottom border-light">
+                                        <th class="text-secondary fw-normal ps-0 ps-lg-3 d-flex align-items-center">
+                                            <img src="assets/images/user02.jpg" class="img-fluid art-people-img rounded-circle me-2" alt="user02">
+                                            <i class="fa-solid fa-arrow-right text-secondary me-2"></i>
+                                            <p class="text-secondary mb-0">0.054Eth</p>
+                                        </th>
+                                        <td class="text-end text-lg-start ff-noto-sans pe-0">1個月後</td>
+                                      </tr>
+                                      <tr>
+                                        <th class="text-secondary fw-normal ps-0 ps-lg-3 d-flex align-items-center">
+                                            <img src="assets/images/user03.jpg" class="img-fluid art-people-img rounded-circle me-2" alt="user03">
+                                            <i class="fa-solid fa-arrow-right text-secondary me-2"></i>
+                                            <p class="text-secondary mb-0">0.044Eth</p>
+                                        </th>
+                                        <td class="text-end text-lg-start ff-noto-sans pe-0">2週後</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="accordion" id="info">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-bold p-3 p-lg-4" type="button" data-bs-toggle="collapse" data-bs-target="#info-collapse" aria-expanded="true" aria-controls="info-collapse">
+                                基本資訊
+                            </button>
+                          </h2>
+                          <div id="info-collapse" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#info">
+                            <div class="accordion-body text-secondary px-3 py-4 px-lg-4">
+                                <table class="table table-borderless table-hover mb-0">
+                                    <tbody>
+                                      <tr class="border-bottom border-light">
+                                        <th class="text-secondary fw-normal ps-0">擁有者</th>
+                                        <td class="text-end pe-0">0xa543x…1283</td>
+                                      </tr>
+                                      <tr class="border-bottom border-light">
+                                        <th class="text-secondary fw-normal ps-0">代幣ID</th>
+                                        <td class="text-end pe-0">#1234</td>
+                                      </tr>
+                                      <tr class="border-bottom border-light">
+                                        <th class="text-secondary fw-normal ps-0">合約地址</th>
+                                        <td class="text-end pe-0">青藍金剛鸚鵡</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="accordion" id="history">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-bold p-3 p-lg-4" type="button" data-bs-toggle="collapse" data-bs-target="#history-collapse" aria-expanded="true" aria-controls="history-collapse">
+                                交易歷史
+                            </button>
+                          </h2>
+                          <div id="history-collapse" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#history">
+                            <div class="accordion-body text-secondary px-3 py-4 px-lg-4">
+                                <table class="table table-borderless table-hover mb-0">
+                                    <thead class="text-lg-start text-secondary bg-light">
+                                        <tr>
+                                            <th class="fw-normal">事件</th>
+                                            <th class="fw-normal">價格</th>
+                                            <th class="fw-normal">從</th>
+                                            <th class="fw-normal">時間</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr class="border-bottom border-light">
+                                        <th class="text-secondary fw-normal">上架</th>
+                                        <td class="text-secondary ff-noto-sans">2nb</td>
+                                        <td class="d-flex">
+                                            <img src="assets/images/artist02.jpg" class="img-fluid art-from-img rounded-circle" alt="artist02">
+                                            <p class="d-none d-lg-block text-secondary ms-2 mb-0">Antony WU</p>
+                                        </td>
+                                        <td class="ff-noto-sans">14小時前</td>
+                                      </tr>
+                                      <tr>
+                                        <th class="text-secondary fw-normal">出價</th>
+                                        <td class="text-secondary ff-noto-sans">2nb</td>
+                                        <td class="d-flex">
+                                            <img src="assets/images/artist01.jpg" class="img-fluid art-from-img rounded-circle" alt="artist01">
+                                            <p class="d-none d-lg-block text-secondary ms-2 mb-0">Antony WU</p>
+                                        </td>
+                                        <td class="ff-noto-sans">2週後</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 其餘作品 -->
+    <section class="pb-6">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end border-bottom mb-4 mb-xl-7">
+                <h2 class="text-secondary fs-3 fs-xl-1 mb-2">Other
+                    <span class="d-none d-xl-inline-block fs-5 fw-bold ms-3">其餘作品</span>
+                </h2>
+                <a href="#" class="fs-6 py-2 px-7 position-relative btn-more-hover">MORE
+                    <div class="triangle"></div>
+                </a>
+            </div>
+            <!-- Slider main container -->
+            <div class="swiper art-introduction-swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper mb-4 mb-xl-7">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="card border-0 border-lg-bottom">
+                            <div class="p-2 p-lg-4">
+                                <img src="assets/images/art27.jpg" alt="art27" class="img-fluid art-other-img">
+                            </div>
+                            <div class="card-body bg-light p-2 px-lg-0 py-lg-3">
+                              <h3 class="card-title small text-secondary fs-lg-7 fw-lg-bold mb-0">我真的受傷了</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card border-0 border-lg-bottom">
+                            <div class="p-2 p-lg-4">
+                                <img src="assets/images/art20.jpg" alt="art20" class="img-fluid art-other-img">
+                            </div>
+                            <div class="card-body bg-light p-2 px-lg-0 py-lg-3">
+                              <h3 class="card-title small text-secondary fs-lg-7 fw-lg-bold mb-0">這兩隻也太像企鵝了吧</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card border-0 border-lg-bottom">
+                            <div class="p-2 p-lg-4">
+                                <img src="assets/images/art22.jpg" alt="art22" class="img-fluid art-other-img">
+                            </div>
+                            <div class="card-body bg-light p-2 px-lg-0 py-lg-3">
+                              <h3 class="card-title small text-secondary fs-lg-7 fw-lg-bold mb-0">群聚囉～小鳥</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card border-0 border-lg-bottom">
+                            <div class="p-2 p-lg-4">
+                                <img src="assets/images/art22.jpg" alt="art22" class="img-fluid art-other-img">
+                            </div>
+                            <div class="card-body bg-light p-2 px-lg-0 py-lg-3">
+                              <h3 class="card-title small text-secondary fs-lg-7 fw-lg-bold mb-0">群聚的小鳥們</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

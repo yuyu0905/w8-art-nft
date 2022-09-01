@@ -140,8 +140,8 @@
 }
 
 // 輪播
-.swiper {
-    &-slide-active {
+.artist-swiper {
+    .swiper-slide-active {
         @include media-breakpoint-up(xl) {
             height: 439px !important;
             width: 636px !important;
@@ -154,7 +154,7 @@
         }
     }
 
-    &-slide-next, &-slide-prev {
+    .swiper-slide-next, .swiper-slide-prev {
         @include media-breakpoint-up(xl) {
             height: 262px !important;
             width: 306px !important;
@@ -167,19 +167,4 @@
             }
         }
     }
-
-    &-pagination {
-      position: unset;
-  
-      &-bullet {
-        background-color: $secondary;
-        border-radius: 0%;
-        opacity: 1;
-
-        &-active {
-            background-color: $primary;
-            width: 16px;
-        }
-      }
-    }
-  }
+}

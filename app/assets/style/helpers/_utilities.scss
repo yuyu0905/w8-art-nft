@@ -1,6 +1,11 @@
 .ff-paytone-one {
     font-family: "Paytone One", "sans-serif";
 }
+
+.ff-noto-sans {
+    font-family: "Noto Sans TC", "sans-serif";
+}
+
 .bg-img {
     background-position: center;
     background-size: cover;
@@ -86,6 +91,12 @@
     }
 }
 
+.fs-lg-1 {
+    @include media-breakpoint-up(lg) {
+        font-size: $h1-font-size !important; // 48px
+    }
+}
+
 .fs-xl-1 {
     @include media-breakpoint-up(xl) {
         font-size: $h1-font-size !important; // 48px
@@ -164,6 +175,22 @@
         background-color: $link-hover-color !important;
     }
 }
+
+// 輪播 pagination
+.swiper-pagination {
+    position: unset;
+
+    &-bullet {
+      background-color: $secondary;
+      border-radius: 0%;
+      opacity: 1;
+
+      &-active {
+          background-color: $primary;
+          width: 16px;
+      }
+    }
+  }
 
 // image 黑 + 右下 more btn + 內框
 .img-hover-more-btn {
