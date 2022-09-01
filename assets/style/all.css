@@ -14949,6 +14949,70 @@ a {
   }
 }
 
+.img-hover-more-btn {
+  position: relative;
+}
+
+.img-hover-more-btn .btn-more, .img-hover-more-btn .triangle {
+  display: none;
+  right: 32px;
+  bottom: 32px;
+}
+
+.img-hover-more-btn .info {
+  display: none;
+  width: calc(100% - 64px);
+  top: 32px;
+  left: 32px;
+}
+
+.img-hover-more-btn:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.6;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.img-hover-more-btn:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 16px;
+  border: 1px solid #fff;
+}
+
+.img-hover-more-btn:hover .info {
+  display: inline-block;
+  z-index: 1;
+}
+
+.img-hover-more-btn:hover .btn-more {
+  display: block;
+  z-index: 1;
+}
+
+.img-hover-more-btn:hover .triangle {
+  display: block;
+  z-index: 1;
+}
+
 .logo {
   height: 18px;
 }
@@ -14965,6 +15029,10 @@ a {
 
 .nav-link:hover {
   color: #E6553B;
+}
+
+.active {
+  color: #b8442f;
 }
 
 .header-line {
@@ -15138,70 +15206,6 @@ a {
 }
 
 .img-hover-triangle:hover .triangle {
-  display: block;
-  z-index: 1;
-}
-
-.img-hover-more-btn {
-  position: relative;
-}
-
-.img-hover-more-btn .btn-more, .img-hover-more-btn .triangle {
-  display: none;
-  right: 32px;
-  bottom: 32px;
-}
-
-.img-hover-more-btn .info {
-  display: none;
-  width: calc(100% - 64px);
-  top: 32px;
-  left: 32px;
-}
-
-.img-hover-more-btn:hover::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: black;
-  opacity: 0.6;
-  color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.img-hover-more-btn:hover::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: 16px;
-  border: 1px solid #fff;
-}
-
-.img-hover-more-btn:hover .info {
-  display: inline-block;
-  z-index: 1;
-}
-
-.img-hover-more-btn:hover .btn-more {
-  display: block;
-  z-index: 1;
-}
-
-.img-hover-more-btn:hover .triangle {
   display: block;
   z-index: 1;
 }
