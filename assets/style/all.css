@@ -14949,6 +14949,16 @@ a {
   }
 }
 
+.btn-orange {
+  color: #fff !important;
+  background-color: #E6553B !important;
+}
+
+.btn-orange:hover {
+  color: #fff !important;
+  background-color: #b8442f !important;
+}
+
 .img-hover-more-btn {
   position: relative;
 }
