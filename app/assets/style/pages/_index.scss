@@ -139,61 +139,6 @@
     }
 }
 
-// image 黑 + 右下 more btn + 內框
-.img-hover-more-btn {
-    position: relative;
-    .btn-more, .triangle {
-        display: none;
-        right: 32px;
-        bottom: 32px;
-    }
-    .info {
-        display: none;
-        width: calc(100% - 64px);
-        top: 32px;
-        left: 32px;
-    }
-
-    &:hover {
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: $secondary;
-            opacity: 0.6;
-            color: $white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            margin: 16px;
-            border: 1px solid $white;
-        }
-        .info {
-            display: inline-block;
-            z-index: 1;
-        }
-        .btn-more {
-            display: block;
-            z-index: 1;
-        }
-        .triangle {
-            display: block;
-            z-index: 1;
-        }
-    }
-}
-
 // 輪播
 .swiper {
     &-slide-active {

@@ -38,4 +38,8 @@ $(function() {
     $('.artwork').masonry(); // 渲染整體畫面
   });
 
+  $('.explore').imagesLoaded().progress( function() {
+    $('.explore').masonry(); // 渲染整體畫面
+  });
+
 });
