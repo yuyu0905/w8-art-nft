@@ -155,6 +155,16 @@
     }
 }
 
+.btn-orange {
+    color: $white !important;
+    background-color: $primary !important;
+
+    &:hover {
+        color: $white !important;
+        background-color: $link-hover-color !important;
+    }
+}
+
 // image 黑 + 右下 more btn + 內框
 .img-hover-more-btn {
     position: relative;
