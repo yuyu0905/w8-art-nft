@@ -37,10 +37,10 @@
         <ul class="navbar-nav me-auto mb-4 mb-lg-0 text-center">
           <li class="nav-item d-none d-lg-flex">
             <form class="d-flex border-lg-start">
-              <input class="form-control bg-light border-0" type="search" placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
-              <a class="nav-link py-4 py-lg-6 px-lg-7 border-0" href="#">
-                <i class="fa-solid fa-magnifying-glass align-middle fs-6"></i>
-              </a>
+              <input class="form-control bg-light border-0 header-search-input ps-lg-7" id="search" type="search" placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+              <label for="search" class="form-label nav-link py-4 py-lg-6 ps-lg-4 pe-lg-7 mb-0">
+                  <i class="fa-solid fa-magnifying-glass align-middle fs-6"></i>
+              </label>
             </form>
           </li>
           <li class="nav-item px-2 px-lg-0">
@@ -95,10 +95,10 @@
                         <p class="fs-5 fw-bold vertical-lr m-0">推 薦 系 列</p>
                     </div>
                     <div class="border-2 border-bottom d-lg-flex bg-white border-lg-1 w-100 row g-0">
-                        <div class="col-12 col-md-6 flex-lg-shrink-0">
+                        <div class="col-12 col-md-6 col-lg-7 flex-lg-shrink-0">
                             <img src="assets/images/art01.jpg" class="img-fluid card-img-top recommend-img recommend-img-lg" alt="art01">
                         </div>
-                        <div class="card-body py-5 d-flex flex-column justify-content-between col-12 col-md-6 flex-lg-grow-1">
+                        <div class="card-body px-4 pb-4 pt-4 pt-xl-12 d-flex flex-column justify-content-between col-12 col-md-6 col-lg-5 flex-lg-grow-1">
                             <div>
                                 <p class="fs-6 fw-bold text-secondary mb-2">Kemus Wu</p>
                                 <h3 class="fs-4 fs-lg-1 fw-bold text-secondary mb-4">瞳孔:流動的脈絡</h3>
@@ -472,8 +472,9 @@
     <!-- 創建並出售你的藝術品 -->
     <section class="py-6">
         <div class="container">
-            <h2 class="text-secondary text-center fs-3 fs-xl-1 mb-3">Join Us</h2>
-            <h3 class="text-secondary text-center fw-bold fs-5 mb-5 mb-xl-6">創建並出售你的藝術品</h3>
+            <h2 class="text-secondary text-center fs-3 fs-xl-1 mb-5 mb-xl-6">Join Us
+                <span class="fw-bold d-block fs-5 mt-3">創建並出售你的藝術品</span>
+            </h2>
         </div>
         <div class="border-bottom border-4"></div>
         <div class="bg-secondary w-100 h-1 mt-2 mb-7 mb-xl-12"></div>
@@ -525,7 +526,7 @@
     <div class="bg-secondary w-100 h-1 mb-2"></div>
 <footer class="border-top border-4">
     <div class="container">
-        <p class="text-secondary text-center py-4">© ART NFT. All Rights Reserved</p>
+        <p class="text-secondary text-center py-4 mb-0 ff-noto-sans">© ART NFT. All Rights Reserved</p>
     </div>
 </footer>
 

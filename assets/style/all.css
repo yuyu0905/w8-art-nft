@@ -15094,6 +15094,10 @@ a {
   font-size: 0.875em;
 }
 
+.header-search-input {
+  min-width: 288px;
+}
+
 .recommend-img {
   height: 238px;
 }

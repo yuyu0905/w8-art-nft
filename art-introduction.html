@@ -37,10 +37,10 @@
         <ul class="navbar-nav me-auto mb-4 mb-lg-0 text-center">
           <li class="nav-item d-none d-lg-flex">
             <form class="d-flex border-lg-start">
-              <input class="form-control bg-light border-0" type="search" placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
-              <a class="nav-link py-4 py-lg-6 px-lg-7 border-0" href="#">
-                <i class="fa-solid fa-magnifying-glass align-middle fs-6"></i>
-              </a>
+              <input class="form-control bg-light border-0 header-search-input ps-lg-7" id="search" type="search" placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+              <label for="search" class="form-label nav-link py-4 py-lg-6 ps-lg-4 pe-lg-7 mb-0">
+                  <i class="fa-solid fa-magnifying-glass align-middle fs-6"></i>
+              </label>
             </form>
           </li>
           <li class="nav-item px-2 px-lg-0">
@@ -124,11 +124,11 @@
                 <div class="col-12 col-lg-6">
                     <div class="accordion" id="characteristic">
                         <div class="accordion-item">
-                          <h2 class="accordion-header" id="headingOne">
+                          <h3 class="accordion-header" id="headingOne">
                             <button class="accordion-button fw-bold p-3 p-lg-4" type="button" data-bs-toggle="collapse" data-bs-target="#characteristic-collapse" aria-expanded="true" aria-controls="characteristic-collapse">
                                 屬性
                             </button>
-                          </h2>
+                          </h3>
                           <div id="characteristic-collapse" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#characteristic">
                             <div class="accordion-body text-secondary px-3 py-4 px-lg-4">
                                 <table class="table table-borderless table-hover ff-noto-sans mb-0">
@@ -159,11 +159,11 @@
                 <div class="col-12 col-lg-6">
                     <div class="accordion" id="price">
                         <div class="accordion-item">
-                          <h2 class="accordion-header" id="headingOne">
+                          <h3 class="accordion-header" id="headingOne">
                             <button class="accordion-button fw-bold p-3 p-lg-4" type="button" data-bs-toggle="collapse" data-bs-target="#price-collapse" aria-expanded="true" aria-controls="price-collapse">
                                 出價
                             </button>
-                          </h2>
+                          </h3>
                           <div id="price-collapse" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#price">
                             <div class="accordion-body text-secondary px-3 py-4 px-lg-4">
                                 <table class="table table-borderless table-hover mb-0">
@@ -208,11 +208,11 @@
                 <div class="col-12 col-lg-6">
                     <div class="accordion" id="info">
                         <div class="accordion-item">
-                          <h2 class="accordion-header" id="headingOne">
+                          <h3 class="accordion-header" id="headingOne">
                             <button class="accordion-button fw-bold p-3 p-lg-4" type="button" data-bs-toggle="collapse" data-bs-target="#info-collapse" aria-expanded="true" aria-controls="info-collapse">
                                 基本資訊
                             </button>
-                          </h2>
+                          </h3>
                           <div id="info-collapse" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#info">
                             <div class="accordion-body text-secondary px-3 py-4 px-lg-4">
                                 <table class="table table-borderless table-hover mb-0">
@@ -239,11 +239,11 @@
                 <div class="col-12 col-lg-6">
                     <div class="accordion" id="history">
                         <div class="accordion-item">
-                          <h2 class="accordion-header" id="headingOne">
+                          <h3 class="accordion-header" id="headingOne">
                             <button class="accordion-button fw-bold p-3 p-lg-4" type="button" data-bs-toggle="collapse" data-bs-target="#history-collapse" aria-expanded="true" aria-controls="history-collapse">
                                 交易歷史
                             </button>
-                          </h2>
+                          </h3>
                           <div id="history-collapse" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#history">
                             <div class="accordion-body text-secondary px-3 py-4 px-lg-4">
                                 <table class="table table-borderless table-hover mb-0">
@@ -302,36 +302,43 @@
                 <div class="swiper-wrapper mb-4 mb-xl-7">
                     <!-- Slides -->
                     <div class="swiper-slide">
-                        <div class="card border-0 border-lg-bottom">
+                        <a href="#">
+                          <div class="card border-0 border-lg-bottom">
                             <div class="p-2 p-lg-4">
                                 <img src="assets/images/art27.jpg" alt="art27" class="img-fluid art-other-img">
                             </div>
                             <div class="card-body bg-light p-2 px-lg-0 py-lg-3">
                               <h3 class="card-title small text-secondary fs-lg-7 fw-lg-bold mb-0">我真的受傷了</h3>
                             </div>
-                        </div>
+                          </div>
+                        </a>
                     </div>
                     <div class="swiper-slide">
+                      <a href="#">
                         <div class="card border-0 border-lg-bottom">
-                            <div class="p-2 p-lg-4">
-                                <img src="assets/images/art20.jpg" alt="art20" class="img-fluid art-other-img">
-                            </div>
-                            <div class="card-body bg-light p-2 px-lg-0 py-lg-3">
-                              <h3 class="card-title small text-secondary fs-lg-7 fw-lg-bold mb-0">這兩隻也太像企鵝了吧</h3>
-                            </div>
+                          <div class="p-2 p-lg-4">
+                              <img src="assets/images/art20.jpg" alt="art20" class="img-fluid art-other-img">
+                          </div>
+                          <div class="card-body bg-light p-2 px-lg-0 py-lg-3">
+                            <h3 class="card-title small text-secondary fs-lg-7 fw-lg-bold mb-0">這兩隻也太像企鵝了吧</h3>
+                          </div>
                         </div>
+                      </a>
                     </div>
                     <div class="swiper-slide">
+                      <a href="#">
                         <div class="card border-0 border-lg-bottom">
-                            <div class="p-2 p-lg-4">
-                                <img src="assets/images/art22.jpg" alt="art22" class="img-fluid art-other-img">
-                            </div>
-                            <div class="card-body bg-light p-2 px-lg-0 py-lg-3">
-                              <h3 class="card-title small text-secondary fs-lg-7 fw-lg-bold mb-0">群聚囉～小鳥</h3>
-                            </div>
+                          <div class="p-2 p-lg-4">
+                              <img src="assets/images/art22.jpg" alt="art22" class="img-fluid art-other-img">
+                          </div>
+                          <div class="card-body bg-light p-2 px-lg-0 py-lg-3">
+                            <h3 class="card-title small text-secondary fs-lg-7 fw-lg-bold mb-0">群聚囉～小鳥</h3>
+                          </div>
                         </div>
+                      </a>
                     </div>
                     <div class="swiper-slide">
+                      <a href="#">
                         <div class="card border-0 border-lg-bottom">
                             <div class="p-2 p-lg-4">
                                 <img src="assets/images/art22.jpg" alt="art22" class="img-fluid art-other-img">
@@ -340,6 +347,7 @@
                               <h3 class="card-title small text-secondary fs-lg-7 fw-lg-bold mb-0">群聚的小鳥們</h3>
                             </div>
                         </div>
+                      </a>
                     </div>
                 </div>
                 <div class="d-flex align-items-center justify-content-center">
@@ -353,7 +361,7 @@
     <div class="bg-secondary w-100 h-1 mb-2"></div>
 <footer class="border-top border-4">
     <div class="container">
-        <p class="text-secondary text-center py-4">© ART NFT. All Rights Reserved</p>
+        <p class="text-secondary text-center py-4 mb-0 ff-noto-sans">© ART NFT. All Rights Reserved</p>
     </div>
 </footer>
 
