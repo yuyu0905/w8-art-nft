@@ -67,4 +67,9 @@ $(function() {
     $('.art-intro').masonry(); // 渲染整體畫面
   });
 
+  // 藝術品系列 - 篩選
+  $('.art-filter').imagesLoaded().progress( function() {
+    $('.art-filter').masonry(); // 渲染整體畫面
+  });
+
 });
