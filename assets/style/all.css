@@ -14908,6 +14908,12 @@ a {
 }
 
 @media (min-width: 992px) {
+  .fs-lg-4 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (min-width: 992px) {
   .fs-lg-7 {
     font-size: 1rem !important;
   }
@@ -14941,6 +14947,10 @@ a {
      object-position: top;
 }
 
+.margin-left-n-1 {
+  margin-left: -1px;
+}
+
 @media (min-width: 992px) {
   .margin-top-lg-n-1 {
     margin-top: -1px;
@@ -14967,6 +14977,45 @@ a {
 .btn-orange:hover {
   color: #fff !important;
   background-color: #b8442f !important;
+}
+
+.border-right-center-space {
+  position: relative;
+}
+
+.border-right-center-space::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-right: 1px solid #000;
+  height: 20px;
+}
+
+.border-right-center-space::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-right: 1px solid #000;
+  height: 20px;
+}
+
+.box-shadow-none {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.form-check-secondary:checked {
+  background-color: #000;
+  border-color: #000;
+}
+
+.form-check-secondary:focus {
+  border-color: gray;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25);
 }
 
 .swiper-pagination {
