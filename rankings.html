@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>市價排行榜 - NFT藝術家交易平台</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+    <link rel="stylesheet" href="./assets/style/all.css">
+  </head>
+
+  <body>
+    <header class="sticky-top header">
+  <nav class="navbar navbar-expand-lg py-0 bg-light">
+    <div class="container-fluid container-lg px-0 px-lg-2">
+      <h1 class="mb-0 py-3 py-lg-5 px-2 px-lg-0">
+        <a class="navbar-brand d-block lh-1 p-0 flex-grow-1" href="index.html">
+          <img src="assets/images/logo.svg" class="img-fluid logo" alt="logo">
+        </a>
+      </h1>
+      <div>
+        <a class="text-secondary py-3 me-4 d-lg-none header-search" role="button">
+          <i class="fa-solid fa-magnifying-glass align-middle fs-6"></i>
+        </a>
+        <a class="navbar-toggler border-0 text-secondary py-3 header-menu" role="button" data-bs-toggle="collapse" data-bs-target="#menu "aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars align-middle fs-6"></i>
+        </a>
+        <a class="navbar-toggler border-0 text-secondary py-3 header-close d-none" role="button" data-bs-toggle="collapse" data-bs-target="#menu "aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa-solid fa-xmark align-middle fs-6"></i>
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse flex-grow-0 bg-white bg-lg-light" id="menu">
+        <ul class="navbar-nav me-auto mb-4 mb-lg-0 text-center">
+          <li class="nav-item d-none d-lg-flex">
+            <form class="d-flex border-lg-start">
+              <input class="form-control bg-light border-0 header-search-input ps-lg-7" id="search" type="search" placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+              <label for="search" class="form-label nav-link py-4 py-lg-6 ps-lg-4 pe-lg-7 mb-0">
+                  <i class="fa-solid fa-magnifying-glass align-middle fs-6"></i>
+              </label>
+            </form>
+          </li>
+          <li class="nav-item px-2 px-lg-0">
+            <a class="nav-link py-4 py-lg-6 px-lg-6 px-xxl-7 border-bottom border-lg-start fs-6 fw-bold fs-lg-7 " href="explore.html">探索</a>
+          </li>
+          <li class="nav-item px-2 px-lg-0 mb-1 mb-lg-0">
+            <a class="nav-link py-4 py-lg-6 px-lg-6 px-xxl-7 border-lg-start fs-6 fw-bold fs-lg-7 active" href="rankings.html">市值</a>
+          </li>
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link py-4 py-lg-6 px-lg-6 px-xxl-7 border-bottom border-lg-start fs-6 fw-bold fs-lg-7" role="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+              <i class="fa-solid fa-wallet align-middle"></i>
+            </a>
+          </li>
+          <li class="nav-item px-2 px-lg-0 d-lg-none mb-1 mb-lg-0">
+            <a class="nav-link py-3 py-lg-4 border fs-6 btn-orange" role="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+              連結錢包
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="bg-secondary w-100 position-absolute h-1 header-line"></div>
+  </nav>
+    
+  <!-- 手機版 - 搜尋 -->
+  <div class="header-search-bar w-100 d-none bg-light d-lg-none">
+    <div class="container-fluid">
+      <form class="d-flex align-items-center">
+        <a class="py-3 border-0 lh-1 header-search" href="#">
+          <i class="fa-solid fa-angle-left align-middle fs-6"></i>
+        </a>
+        <input class="form-control bg-light border-0" type="search" placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+        <a class="py-3 border-0 lh-1 header-search" href="#">
+          <i class="fa-solid fa-magnifying-glass align-middle fs-6"></i>
+        </a>
+      </form>
+    </div>
+  </div>
+</header>
+
+
+
+    
+<main>
+    <section class="pt-4 pb-6 pt-lg-6 pb-lg-12">
+        <div class="container">
+            <h2 class="fs-3 text-secondary text-center fw-bold mb-3">市價排行榜</h2>
+            <p class="text-secondary text-center ff-noto-sans mb-5">NFT系列藝術作品排行榜！全球注目指標</p>
+            <table class="table table-borderless bg-white mb-0">
+                <thead class="bg-light text-secondary text-end ff-noto-sans">
+                    <tr class="d-none d-lg-table-row">
+                        <th class="rankings-th p-3" scope="col"></th>
+                        <td class="text-start p-3" scope="col">
+                            <p class="mb-0">系列作品名稱</p>
+                        </td>
+                        <td class="p-3" scope="col">
+                            <p class="mb-0">價值</p>
+                        </td>
+                        <td class="p-3" scope="col">
+                            <p class="mb-0">24h%</p>
+                        </td>
+                        <td class="p-3" scope="col">
+                            <p class="mb-0">7d%</p>
+                        </td>
+                        <td class="p-3" scope="col">
+                            <p class="mb-0">地板價</p>
+                        </td>
+                        <td class="p-3" scope="col">
+                            <p class="mb-0">擁有者</p>
+                        </td>
+                        <td class="p-3" scope="col">
+                            <p class="mb-0">作品數量</p>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="px-2 py-3 border border-end-0 rankings-th" scope="row">
+                            <p class="text-secondary text-center fs-4 ff-paytone-one mb-0">1</p>
+                        </th>
+                        <td class="p-0 border border-lg-end-0">
+                            <div class="accordion d-lg-none" id="accordion-ranking-1">
+                                <div class="accordion-item border-0">
+                                    <div class="accordion-header" id="ranking-1">
+                                        <button class="accordion-button accordion-more-button collapsed text-secondary p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ranking-1" aria-expanded="false" aria-controls="collapse-ranking-1">
+                                            <ul class="list-unstyled w-100 d-flex justify-content-between align-items-center mb-0">
+                                                <li class="px-2 py-3 flex-grow-1">
+                                                    <div class="d-flex justify-content-start align-items-center">
+                                                        <img src="assets/images/art13.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art13">
+                                                        <h3 class="small fw-bold ms-2 mb-0">追求者送我的花</h3>
+                                                    </div>
+                                                </li>
+                                                <li class="px-2 py-3">
+                                                    <p class="fs-5 mb-0"><i class="fa-brands fa-ethereum me-2 mt-3"></i>1,774.19</p>
+                                                </li>
+                                            </ul>
+                                        </button>
+                                    </div>
+                                    <div id="collapse-ranking-1" class="accordion-collapse collapse" aria-labelledby="ranking-1" data-bs-parent="#accordion-ranking-1">
+                                        <div class="accordion-body p-3">
+                                            <ul class="list-unstyled text-center row mb-0">
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">24h%</p>
+                                                    <p class="fs-5 text-success mb-0">+220.49%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">7d%</p>
+                                                    <p class="fs-5 text-primary mb-0">-2.43%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">地板價</p>
+                                                    <p class="fs-5 text-secondary mb-0"><i class="fa-brands fa-ethereum me-1"></i>2.90</p>
+                                                </li>
+                                                <li class="col-4 offset-2">
+                                                    <p class="small text-secondary mb-2">擁有者</p>
+                                                    <p class="fs-5 text-secondary mb-0">32.1K</p>
+                                                </li>
+                                                <li class="col-4">
+                                                    <p class="small text-secondary mb-2">作品數量</p>
+                                                    <p class="fs-5 text-secondary mb-0">1000</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-block px-2 py-3">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <img src="assets/images/art13.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art13">
+                                    <h3 class="text-secondary small fw-bold ms-2 mb-0">追求者送我的花</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>1,774.19
+                        </td>
+                        <td class="d-none d-lg-table-cell text-success text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            +220.49%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-primary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            -2.43%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>2.90
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            32.1K
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-start-0 fs-5 align-middle">
+                            1000
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="px-2 py-3 border border-end-0 rankings-th" scope="row">
+                            <p class="text-secondary text-center fs-4 ff-paytone-one mb-0">2</p>
+                        </th>
+                        <td class="p-0 border border-lg-end-0">
+                            <div class="accordion d-lg-none" id="accordion-ranking-2">
+                                <div class="accordion-item border-0">
+                                    <div class="accordion-header" id="ranking-2">
+                                        <button class="accordion-button accordion-more-button collapsed text-secondary p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ranking-2" aria-expanded="false" aria-controls="collapse-ranking-2">
+                                            <ul class="list-unstyled w-100 d-flex justify-content-between align-items-center mb-0">
+                                                <li class="px-2 py-3 flex-grow-1">
+                                                    <div class="d-flex justify-content-start align-items-center">
+                                                        <img src="assets/images/art06.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art06">
+                                                        <h3 class="small fw-bold ms-2 mb-0">夏天的時候</h3>
+                                                    </div>
+                                                </li>
+                                                <li class="px-2 py-3">
+                                                    <p class="fs-5 mb-0"><i class="fa-brands fa-ethereum me-2 mt-3"></i>1,524.89</p>
+                                                </li>
+                                            </ul>
+                                        </button>
+                                    </div>
+                                    <div id="collapse-ranking-2" class="accordion-collapse collapse" aria-labelledby="ranking-2" data-bs-parent="#accordion-ranking-2">
+                                        <div class="accordion-body p-3">
+                                            <ul class="list-unstyled text-center row mb-0">
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">24h%</p>
+                                                    <p class="fs-5 text-success mb-0">+80.49%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">7d%</p>
+                                                    <p class="fs-5 text-primary mb-0">-2.43%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">地板價</p>
+                                                    <p class="fs-5 text-secondary mb-0"><i class="fa-brands fa-ethereum me-1"></i>90.23</p>
+                                                </li>
+                                                <li class="col-4 offset-2">
+                                                    <p class="small text-secondary mb-2">擁有者</p>
+                                                    <p class="fs-5 text-secondary mb-0">32.1K</p>
+                                                </li>
+                                                <li class="col-4">
+                                                    <p class="small text-secondary mb-2">作品數量</p>
+                                                    <p class="fs-5 text-secondary mb-0">1000</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-block px-2 py-3">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <img src="assets/images/art06.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art06">
+                                    <h3 class="text-secondary small fw-bold ms-2 mb-0">夏天的時候</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>1,524.89
+                        </td>
+                        <td class="d-none d-lg-table-cell text-success text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            +80.49%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-primary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            -2.43%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>90.23
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            32.1K
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-start-0 fs-5 align-middle">
+                            1000
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="px-2 py-3 border border-end-0 rankings-th" scope="row">
+                            <p class="text-secondary text-center fs-4 ff-paytone-one mb-0">3</p>
+                        </th>
+                        <td class="p-0 border border-lg-end-0">
+                            <div class="accordion d-lg-none" id="accordion-ranking-3">
+                                <div class="accordion-item border-0">
+                                    <div class="accordion-header" id="ranking-3">
+                                        <button class="accordion-button accordion-more-button collapsed text-secondary p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ranking-3" aria-expanded="false" aria-controls="collapse-ranking-3">
+                                            <ul class="list-unstyled w-100 d-flex justify-content-between align-items-center mb-0">
+                                                <li class="px-2 py-3 flex-grow-1">
+                                                    <div class="d-flex justify-content-start align-items-center">
+                                                        <img src="assets/images/art02.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art02">
+                                                        <h3 class="small fw-bold ms-2 mb-0">海洋波度</h3>
+                                                    </div>
+                                                </li>
+                                                <li class="px-2 py-3">
+                                                    <p class="fs-5 mb-0"><i class="fa-brands fa-ethereum me-2 mt-3"></i>1,400.59</p>
+                                                </li>
+                                            </ul>
+                                        </button>
+                                    </div>
+                                    <div id="collapse-ranking-3" class="accordion-collapse collapse" aria-labelledby="ranking-3" data-bs-parent="#accordion-ranking-3">
+                                        <div class="accordion-body p-3">
+                                            <ul class="list-unstyled text-center row mb-0">
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">24h%</p>
+                                                    <p class="fs-5 text-primary mb-0">-3.92%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">7d%</p>
+                                                    <p class="fs-5 text-primary mb-0">-13.43%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">地板價</p>
+                                                    <p class="fs-5 text-secondary mb-0"><i class="fa-brands fa-ethereum me-1"></i>2.90</p>
+                                                </li>
+                                                <li class="col-4 offset-2">
+                                                    <p class="small text-secondary mb-2">擁有者</p>
+                                                    <p class="fs-5 text-secondary mb-0">32.1K</p>
+                                                </li>
+                                                <li class="col-4">
+                                                    <p class="small text-secondary mb-2">作品數量</p>
+                                                    <p class="fs-5 text-secondary mb-0">1000</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-block px-2 py-3">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <img src="assets/images/art02.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art02">
+                                    <h3 class="text-secondary small fw-bold ms-2 mb-0">海洋波度</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>1,400.59
+                        </td>
+                        <td class="d-none d-lg-table-cell text-primary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            -3.92%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-primary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            -13.43%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>2.90
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            32.1K
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-start-0 fs-5 align-middle">
+                            1000
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="px-2 py-3 border border-end-0 rankings-th" scope="row">
+                            <p class="text-secondary text-center fs-4 ff-paytone-one mb-0">4</p>
+                        </th>
+                        <td class="p-0 border border-lg-end-0">
+                            <div class="accordion d-lg-none" id="accordion-ranking-4">
+                                <div class="accordion-item border-0">
+                                    <div class="accordion-header" id="ranking-4">
+                                        <button class="accordion-button accordion-more-button collapsed text-secondary p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ranking-4" aria-expanded="false" aria-controls="collapse-ranking-4">
+                                            <ul class="list-unstyled w-100 d-flex justify-content-between align-items-center mb-0">
+                                                <li class="px-2 py-3 flex-grow-1">
+                                                    <div class="d-flex justify-content-start align-items-center">
+                                                        <img src="assets/images/art03.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art03">
+                                                        <h3 class="small fw-bold ms-2 mb-0">賴床真的很不好</h3>
+                                                    </div>
+                                                </li>
+                                                <li class="px-2 py-3">
+                                                    <p class="fs-5 mb-0"><i class="fa-brands fa-ethereum me-2 mt-3"></i>1,224.88</p>
+                                                </li>
+                                            </ul>
+                                        </button>
+                                    </div>
+                                    <div id="collapse-ranking-4" class="accordion-collapse collapse" aria-labelledby="ranking-4" data-bs-parent="#accordion-ranking-4">
+                                        <div class="accordion-body p-3">
+                                            <ul class="list-unstyled text-center row mb-0">
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">24h%</p>
+                                                    <p class="fs-5 text-primary mb-0">-9.23%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">7d%</p>
+                                                    <p class="fs-5 text-primary mb-0">-20.43%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">地板價</p>
+                                                    <p class="fs-5 text-secondary mb-0"><i class="fa-brands fa-ethereum me-1"></i>2.90</p>
+                                                </li>
+                                                <li class="col-4 offset-2">
+                                                    <p class="small text-secondary mb-2">擁有者</p>
+                                                    <p class="fs-5 text-secondary mb-0">32.1K</p>
+                                                </li>
+                                                <li class="col-4">
+                                                    <p class="small text-secondary mb-2">作品數量</p>
+                                                    <p class="fs-5 text-secondary mb-0">1000</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-block px-2 py-3">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <img src="assets/images/art03.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art03">
+                                    <h3 class="text-secondary small fw-bold ms-2 mb-0">賴床真的很不好</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>1,224.88
+                        </td>
+                        <td class="d-none d-lg-table-cell text-primary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            -9.23%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-primary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            -20.43%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>2.90
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            32.1K
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-start-0 fs-5 align-middle">
+                            1000
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="px-2 py-3 border border-end-0 rankings-th" scope="row">
+                            <p class="text-secondary text-center fs-4 ff-paytone-one mb-0">5</p>
+                        </th>
+                        <td class="p-0 border border-lg-end-0">
+                            <div class="accordion d-lg-none" id="accordion-ranking-5">
+                                <div class="accordion-item border-0">
+                                    <div class="accordion-header" id="ranking-5">
+                                        <button class="accordion-button accordion-more-button collapsed text-secondary p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ranking-5" aria-expanded="false" aria-controls="collapse-ranking-5">
+                                            <ul class="list-unstyled w-100 d-flex justify-content-between align-items-center mb-0">
+                                                <li class="px-2 py-3 flex-grow-1">
+                                                    <div class="d-flex justify-content-start align-items-center">
+                                                        <img src="assets/images/art01.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art01">
+                                                        <h3 class="small fw-bold ms-2 mb-0">瞳孔:流動的脈絡</h3>
+                                                    </div>
+                                                </li>
+                                                <li class="px-2 py-3">
+                                                    <p class="fs-5 mb-0"><i class="fa-brands fa-ethereum me-2 mt-3"></i>1,021.09</p>
+                                                </li>
+                                            </ul>
+                                        </button>
+                                    </div>
+                                    <div id="collapse-ranking-5" class="accordion-collapse collapse" aria-labelledby="ranking-5" data-bs-parent="#accordion-ranking-5">
+                                        <div class="accordion-body p-3">
+                                            <ul class="list-unstyled text-center row mb-0">
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">24h%</p>
+                                                    <p class="fs-5 text-success mb-0">+83.49%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">7d%</p>
+                                                    <p class="fs-5 text-primary mb-0">-1.43%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">地板價</p>
+                                                    <p class="fs-5 text-secondary mb-0"><i class="fa-brands fa-ethereum me-1"></i>2.90</p>
+                                                </li>
+                                                <li class="col-4 offset-2">
+                                                    <p class="small text-secondary mb-2">擁有者</p>
+                                                    <p class="fs-5 text-secondary mb-0">32.1K</p>
+                                                </li>
+                                                <li class="col-4">
+                                                    <p class="small text-secondary mb-2">作品數量</p>
+                                                    <p class="fs-5 text-secondary mb-0">1000</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-block px-2 py-3">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <img src="assets/images/art01.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art01">
+                                    <h3 class="text-secondary small fw-bold ms-2 mb-0">瞳孔:流動的脈絡</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>1,021.09
+                        </td>
+                        <td class="d-none d-lg-table-cell text-success text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            +83.49%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-primary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            -1.43%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>2.90
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            32.1K
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-start-0 fs-5 align-middle">
+                            1000
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="px-2 py-3 border border-end-0 rankings-th" scope="row">
+                            <p class="text-secondary text-center fs-4 ff-paytone-one mb-0">6</p>
+                        </th>
+                        <td class="p-0 border border-lg-end-0">
+                            <div class="accordion d-lg-none" id="accordion-ranking-6">
+                                <div class="accordion-item border-0">
+                                    <div class="accordion-header" id="ranking-6">
+                                        <button class="accordion-button accordion-more-button collapsed text-secondary p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ranking-6" aria-expanded="false" aria-controls="collapse-ranking-6">
+                                            <ul class="list-unstyled w-100 d-flex justify-content-between align-items-center mb-0">
+                                                <li class="px-2 py-3 flex-grow-1">
+                                                    <div class="d-flex justify-content-start align-items-center">
+                                                        <img src="assets/images/art12.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art12">
+                                                        <h3 class="small fw-bold ms-2 mb-0">哭泣的時候</h3>
+                                                    </div>
+                                                </li>
+                                                <li class="px-2 py-3">
+                                                    <p class="fs-5 mb-0"><i class="fa-brands fa-ethereum me-2 mt-3"></i>1,021.09</p>
+                                                </li>
+                                            </ul>
+                                        </button>
+                                    </div>
+                                    <div id="collapse-ranking-6" class="accordion-collapse collapse" aria-labelledby="ranking-6" data-bs-parent="#accordion-ranking-6">
+                                        <div class="accordion-body p-3">
+                                            <ul class="list-unstyled text-center row mb-0">
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">24h%</p>
+                                                    <p class="fs-5 text-primary mb-0">-9.43%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">7d%</p>
+                                                    <p class="fs-5 text-success mb-0">+183.49%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">地板價</p>
+                                                    <p class="fs-5 text-secondary mb-0"><i class="fa-brands fa-ethereum me-1"></i>2.90</p>
+                                                </li>
+                                                <li class="col-4 offset-2">
+                                                    <p class="small text-secondary mb-2">擁有者</p>
+                                                    <p class="fs-5 text-secondary mb-0">32.1K</p>
+                                                </li>
+                                                <li class="col-4">
+                                                    <p class="small text-secondary mb-2">作品數量</p>
+                                                    <p class="fs-5 text-secondary mb-0">1000</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-block px-2 py-3">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <img src="assets/images/art12.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art12">
+                                    <h3 class="text-secondary small fw-bold ms-2 mb-0">哭泣的時候</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>1,021.09
+                        </td>
+                        <td class="d-none d-lg-table-cell text-primary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            -9.43%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-success text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            +183.49%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>2.90
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            32.1K
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-start-0 fs-5 align-middle">
+                            1000
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="px-2 py-3 border border-end-0 rankings-th" scope="row">
+                            <p class="text-secondary text-center fs-4 ff-paytone-one mb-0">7</p>
+                        </th>
+                        <td class="p-0 border border-lg-end-0">
+                            <div class="accordion d-lg-none" id="accordion-ranking-7">
+                                <div class="accordion-item border-0">
+                                    <div class="accordion-header" id="ranking-7">
+                                        <button class="accordion-button accordion-more-button collapsed text-secondary p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ranking-7" aria-expanded="false" aria-controls="collapse-ranking-7">
+                                            <ul class="list-unstyled w-100 d-flex justify-content-between align-items-center mb-0">
+                                                <li class="px-2 py-3 flex-grow-1">
+                                                    <div class="d-flex justify-content-start align-items-center">
+                                                        <img src="assets/images/art14.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art14">
+                                                        <h3 class="small fw-bold ms-2 mb-0">破碎的菠蘿麵包</h3>
+                                                    </div>
+                                                </li>
+                                                <li class="px-2 py-3">
+                                                    <p class="fs-5 mb-0"><i class="fa-brands fa-ethereum me-2 mt-3"></i>888.88</p>
+                                                </li>
+                                            </ul>
+                                        </button>
+                                    </div>
+                                    <div id="collapse-ranking-7" class="accordion-collapse collapse" aria-labelledby="ranking-7" data-bs-parent="#accordion-ranking-7">
+                                        <div class="accordion-body p-3">
+                                            <ul class="list-unstyled text-center row mb-0">
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">24h%</p>
+                                                    <p class="fs-5 text-success mb-0">+20.49%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">7d%</p>
+                                                    <p class="fs-5 text-primary mb-0">-0.43%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">地板價</p>
+                                                    <p class="fs-5 text-secondary mb-0"><i class="fa-brands fa-ethereum me-1"></i>2.90</p>
+                                                </li>
+                                                <li class="col-4 offset-2">
+                                                    <p class="small text-secondary mb-2">擁有者</p>
+                                                    <p class="fs-5 text-secondary mb-0">32.1K</p>
+                                                </li>
+                                                <li class="col-4">
+                                                    <p class="small text-secondary mb-2">作品數量</p>
+                                                    <p class="fs-5 text-secondary mb-0">1000</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-block px-2 py-3">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <img src="assets/images/art14.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art14">
+                                    <h3 class="text-secondary small fw-bold ms-2 mb-0">破碎的菠蘿麵包</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>888.88
+                        </td>
+                        <td class="d-none d-lg-table-cell text-success text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            +20.49%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-primary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            -0.43%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>2.90
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            32.1K
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-start-0 fs-5 align-middle">
+                            1000
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="px-2 py-3 border border-end-0 rankings-th" scope="row">
+                            <p class="text-secondary text-center fs-4 ff-paytone-one mb-0">8</p>
+                        </th>
+                        <td class="p-0 border border-lg-end-0">
+                            <div class="accordion d-lg-none" id="accordion-ranking-8">
+                                <div class="accordion-item border-0">
+                                    <div class="accordion-header" id="ranking-8">
+                                        <button class="accordion-button accordion-more-button collapsed text-secondary p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ranking-8" aria-expanded="false" aria-controls="collapse-ranking-8">
+                                            <ul class="list-unstyled w-100 d-flex justify-content-between align-items-center mb-0">
+                                                <li class="px-2 py-3 flex-grow-1">
+                                                    <div class="d-flex justify-content-start align-items-center">
+                                                        <img src="assets/images/art08.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art08">
+                                                        <h3 class="small fw-bold ms-2 mb-0">人生中的貓咪們</h3>
+                                                    </div>
+                                                </li>
+                                                <li class="px-2 py-3">
+                                                    <p class="fs-5 mb-0"><i class="fa-brands fa-ethereum me-2 mt-3"></i>770.23</p>
+                                                </li>
+                                            </ul>
+                                        </button>
+                                    </div>
+                                    <div id="collapse-ranking-8" class="accordion-collapse collapse" aria-labelledby="ranking-8" data-bs-parent="#accordion-ranking-8">
+                                        <div class="accordion-body p-3">
+                                            <ul class="list-unstyled text-center row mb-0">
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">24h%</p>
+                                                    <p class="fs-5 text-success mb-0">+32.49%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">7d%</p>
+                                                    <p class="fs-5 text-success mb-0">+30.23</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">地板價</p>
+                                                    <p class="fs-5 text-secondary mb-0"><i class="fa-brands fa-ethereum me-1"></i>2.90</p>
+                                                </li>
+                                                <li class="col-4 offset-2">
+                                                    <p class="small text-secondary mb-2">擁有者</p>
+                                                    <p class="fs-5 text-secondary mb-0">32.1K</p>
+                                                </li>
+                                                <li class="col-4">
+                                                    <p class="small text-secondary mb-2">作品數量</p>
+                                                    <p class="fs-5 text-secondary mb-0">1000</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-block px-2 py-3">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <img src="assets/images/art08.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art08">
+                                    <h3 class="text-secondary small fw-bold ms-2 mb-0">人生中的貓咪們</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>770.23
+                        </td>
+                        <td class="d-none d-lg-table-cell text-success text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            +32.49%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-success text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            +30.23
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>2.90
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            32.1K
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-start-0 fs-5 align-middle">
+                            1000
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="px-2 py-3 border border-end-0 rankings-th" scope="row">
+                            <p class="text-secondary text-center fs-4 ff-paytone-one mb-0">9</p>
+                        </th>
+                        <td class="p-0 border border-lg-end-0">
+                            <div class="accordion d-lg-none" id="accordion-ranking-9">
+                                <div class="accordion-item border-0">
+                                    <div class="accordion-header" id="ranking-9">
+                                        <button class="accordion-button accordion-more-button collapsed text-secondary p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ranking-9" aria-expanded="false" aria-controls="collapse-ranking-9">
+                                            <ul class="list-unstyled w-100 d-flex justify-content-between align-items-center mb-0">
+                                                <li class="px-2 py-3 flex-grow-1">
+                                                    <div class="d-flex justify-content-start align-items-center">
+                                                        <img src="assets/images/art19.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art19">
+                                                        <h3 class="small fw-bold ms-2 mb-0">髒兮兮的家</h3>
+                                                    </div>
+                                                </li>
+                                                <li class="px-2 py-3">
+                                                    <p class="fs-5 mb-0"><i class="fa-brands fa-ethereum me-2 mt-3"></i>502.31</p>
+                                                </li>
+                                            </ul>
+                                        </button>
+                                    </div>
+                                    <div id="collapse-ranking-9" class="accordion-collapse collapse" aria-labelledby="ranking-9" data-bs-parent="#accordion-ranking-9">
+                                        <div class="accordion-body p-3">
+                                            <ul class="list-unstyled text-center row mb-0">
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">24h%</p>
+                                                    <p class="fs-5 text-success mb-0">+13.49%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">7d%</p>
+                                                    <p class="fs-5 text-success mb-0">+50.23</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">地板價</p>
+                                                    <p class="fs-5 text-secondary mb-0"><i class="fa-brands fa-ethereum me-1"></i>2.90</p>
+                                                </li>
+                                                <li class="col-4 offset-2">
+                                                    <p class="small text-secondary mb-2">擁有者</p>
+                                                    <p class="fs-5 text-secondary mb-0">32.1K</p>
+                                                </li>
+                                                <li class="col-4">
+                                                    <p class="small text-secondary mb-2">作品數量</p>
+                                                    <p class="fs-5 text-secondary mb-0">1000</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-block px-2 py-3">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <img src="assets/images/art19.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art19">
+                                    <h3 class="text-secondary small fw-bold ms-2 mb-0">髒兮兮的家</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>502.31
+                        </td>
+                        <td class="d-none d-lg-table-cell text-success text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            +13.49%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-success text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            +50.23
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>2.90
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            32.1K
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-start-0 fs-5 align-middle">
+                            1000
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="px-2 py-3 border border-end-0 rankings-th" scope="row">
+                            <p class="text-secondary text-center fs-4 ff-paytone-one mb-0">10</p>
+                        </th>
+                        <td class="p-0 border border-lg-end-0">
+                            <div class="accordion d-lg-none" id="accordion-ranking-10">
+                                <div class="accordion-item border-0">
+                                    <div class="accordion-header" id="ranking-10">
+                                        <button class="accordion-button accordion-more-button collapsed text-secondary p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ranking-10" aria-expanded="false" aria-controls="collapse-ranking-10">
+                                            <ul class="list-unstyled w-100 d-flex justify-content-between align-items-center mb-0">
+                                                <li class="px-2 py-3 flex-grow-1">
+                                                    <div class="d-flex justify-content-start align-items-center">
+                                                        <img src="assets/images/art16.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art16">
+                                                        <h3 class="small fw-bold ms-2 mb-0">細胞小將</h3>
+                                                    </div>
+                                                </li>
+                                                <li class="px-2 py-3">
+                                                    <p class="fs-5 mb-0"><i class="fa-brands fa-ethereum me-2 mt-3"></i>420.20</p>
+                                                </li>
+                                            </ul>
+                                        </button>
+                                    </div>
+                                    <div id="collapse-ranking-10" class="accordion-collapse collapse" aria-labelledby="ranking-10" data-bs-parent="#accordion-ranking-10">
+                                        <div class="accordion-body p-3">
+                                            <ul class="list-unstyled text-center row mb-0">
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">24h%</p>
+                                                    <p class="fs-5 text-success mb-0">+54.49%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">7d%</p>
+                                                    <p class="fs-5 text-primary mb-0">-12.43%</p>
+                                                </li>
+                                                <li class="col-4 mb-3">
+                                                    <p class="small text-secondary mb-2">地板價</p>
+                                                    <p class="fs-5 text-secondary mb-0"><i class="fa-brands fa-ethereum me-1"></i>2.90</p>
+                                                </li>
+                                                <li class="col-4 offset-2">
+                                                    <p class="small text-secondary mb-2">擁有者</p>
+                                                    <p class="fs-5 text-secondary mb-0">32.1K</p>
+                                                </li>
+                                                <li class="col-4">
+                                                    <p class="small text-secondary mb-2">作品數量</p>
+                                                    <p class="fs-5 text-secondary mb-0">1000</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-block px-2 py-3">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <img src="assets/images/art16.jpg" class="img-fluid rounded-circle rankings-art-img" alt="art16">
+                                    <h3 class="text-secondary small fw-bold ms-2 mb-0">細胞小將</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>420.20
+                        </td>
+                        <td class="d-none d-lg-table-cell text-success text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            +54.49%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-primary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            -12.43%
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            <i class="fa-brands fa-ethereum me-2"></i>2.90
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-end-0 border-lg-start-0 fs-5 align-middle">
+                            32.1K
+                        </td>
+                        <td class="d-none d-lg-table-cell text-secondary text-end border border-lg-start-0 fs-5 align-middle">
+                            1000
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+    <div class="bg-secondary w-100 h-1 mb-2"></div>
+<footer class="border-top border-4">
+    <div class="container">
+        <p class="text-secondary text-center py-4 mb-0 ff-noto-sans">© ART NFT. All Rights Reserved</p>
+    </div>
+</footer>
+
+    <script src="./assets/js/vendors.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="./assets/js/all.js"></script>
+  </body>
+
+</html>
