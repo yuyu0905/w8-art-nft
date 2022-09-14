@@ -37,6 +37,38 @@
     }
 }
 
+.accordion-more-button {
+    &::before {
+        content: "+";
+        position: absolute;
+        right: 5px;
+        bottom: 0px;
+        color: $white;
+        z-index: 1;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        /*  三角形  */
+        border-right: 32px solid $black;
+        border-top: 32px solid transparent;
+    }
+
+    &:not(.collapsed) {
+        &::before {
+            content: "-";
+        }
+        &::after {
+            transform: none;
+            /*  三角形  */
+            border-right: 32px solid $primary;
+            border-top: 32px solid transparent;
+        }
+    }
+}
+
 .border-md-end {
     @include media-breakpoint-up(md) {
         border-right: 1px solid $black !important;
@@ -82,6 +114,12 @@
 .border-lg-end-0 {
     @include media-breakpoint-up(lg) {
         border-right: none !important;
+    }
+}
+
+.border-lg-start-0 {
+    @include media-breakpoint-up(lg) {
+        border-left: none !important;
     }
 }
 
